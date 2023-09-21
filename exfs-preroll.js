@@ -19,13 +19,13 @@ function init() {
     videoContent = document.querySelector('#adPlayer video');
     playButton = document.querySelector('#adPlayButton');
     adPlayer = document.querySelector('#adPlayer');
-    adContainer = document.querySelector('#adContainer');
+    // adContainer = document.querySelector('#adContainer');
 
 
     videoContent.addEventListener('click', playAds);
     playButton.addEventListener('click', playAds);
     adPlayer.addEventListener('click', playAds);
-    adContainer.addEventListener('click', playAds);
+    // adContainer.addEventListener('click', playAds);
 
     player = document.querySelector('#adPlayer');
 
@@ -207,11 +207,11 @@ function showPlayButton() {
     videoContent.removeEventListener('click', resumeAd);
     playButton.removeEventListener('click', playAds);
     playButton.removeEventListener('click', resumeAd);
-    adContainer.removeEventListener('click', playAds);
-    adContainer.removeEventListener('click', resumeAd);
+    // adContainer.removeEventListener('click', playAds);
+    // adContainer.removeEventListener('click', resumeAd);
     videoContent.addEventListener('click', resumeAd);
     playButton.addEventListener('click', resumeAd);
-    adContainer.addEventListener('click', resumeAd);
+    // adContainer.addEventListener('click', resumeAd);
 }
 
 function resumeAd() {
