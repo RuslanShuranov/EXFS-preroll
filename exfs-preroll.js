@@ -95,6 +95,9 @@ function playAds() {
 
     document.querySelector('#adContainer .mejs-mediaelement video').style.display = 'block';
     playButton.style.display = 'none';
+    const videoAdUi = document.querySelector('.videoAdUi');
+    videoAdUi.style.pointerEvents = 'auto';
+    videoAdUi.style.cursor = 'pointer';
 
     try {
         // Initialize the ads manager. Ad rules playlist will start at this time.
