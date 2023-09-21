@@ -25,11 +25,20 @@ function init() {
     videoContent.addEventListener('click', playAds);
     playButton.addEventListener('click', playAds);
     adPlayer.addEventListener('click', playAds);
-    // adContainer.addEventListener('click', playAds);
+    adContainer.addEventListener('click', adContainerClick);
 
     player = document.querySelector('#adPlayer');
 
     setUpIMA();
+}
+
+function adContainerClick(event) {
+    console.log("ad container clicked");
+    if(videoContent.paused) {
+        videoContent.play();
+    } else {
+        videoContent.pause();
+    }
 }
 
 /**
