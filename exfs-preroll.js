@@ -12,8 +12,6 @@ let player;
 let adPlayer;
 let adContainer;
 
-console.log('exfs-preroll.js loaded');
-
 /**
  * Initializes IMA setup 1.0.
  */
@@ -38,6 +36,11 @@ function init() {
  * Sets up IMA ad display container, ads loader, and makes an ad request.
  */
 function setUpIMA() {
+    if (!google || !google.ima) {
+        removePlayer();
+        return;
+    }
+
     google.ima.settings.setLocale('ru');
 
     // Create the ad display container.
