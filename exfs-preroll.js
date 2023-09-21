@@ -201,6 +201,7 @@ function onAdEvent(adEvent) {
 }
 
 function removePlayer() {
+    console.log('removePlayer')
     player.parentNode.removeChild(player);
     if (adsManager) {
         adsManager.destroy();
