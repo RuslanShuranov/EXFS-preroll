@@ -25,20 +25,11 @@ function init() {
     videoContent.addEventListener('click', playAds);
     playButton.addEventListener('click', playAds);
     adPlayer.addEventListener('click', playAds);
-    adContainer.addEventListener('click', adContainerClick);
+    // adContainer.addEventListener('click', playAds);
 
     player = document.querySelector('#adPlayer');
 
     setUpIMA();
-}
-
-function adContainerClick(event) {
-    console.log("ad container clicked");
-    if(videoContent.paused) {
-        videoContent.play();
-    } else {
-        videoContent.pause();
-    }
 }
 
 /**
@@ -147,7 +138,6 @@ function onAdsManagerLoaded(adsManagerLoadedEvent) {
     adsManager.addEventListener(google.ima.AdEvent.Type.COMPLETE, onAdEvent);
     adsManager.addEventListener(google.ima.AdEvent.Type.CLICK, onAdEvent);
     adsManager.addEventListener(google.ima.AdEvent.Type.PAUSE, onAdEvent);
-    adsManager.addEventListener(google.ima.AdEvent.Type.INTERACTION, onAdEvent);
 }
 
 /**
@@ -201,7 +191,7 @@ function onAdEvent(adEvent) {
         case google.ima.AdEvent.Type.ALL_ADS_COMPLETED:
             removePlayer();
             break;
-        case google.ima.AdEvent.Type.INTERACTION:
+        case google.ima.AdEvent.Type.CLICK:
             removePlayer();
             break;
     }
@@ -209,6 +199,9 @@ function onAdEvent(adEvent) {
 
 function removePlayer() {
     player.parentNode.removeChild(player);
+    if (adsManager) {
+        adsManager.destroy();
+    }
 }
 
 /**
