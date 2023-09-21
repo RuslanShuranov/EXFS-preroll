@@ -14,6 +14,8 @@ let player;
 let adPlayer;
 let adContainer;
 
+console.log('exfs-preroll.js loaded');
+
 /**
  * Initializes IMA setup 1.0.
  */
