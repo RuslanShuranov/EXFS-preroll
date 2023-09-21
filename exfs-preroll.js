@@ -2,8 +2,6 @@
 // You may study, modify, and use this example for any purpose.
 // Note that this example is provided "as is", WITHOUT WARRANTY
 // of any kind either expressed or implied.
-import './exfs-preroll.css';
-
 let adsManager;
 let adsLoader;
 let adDisplayContainer;
