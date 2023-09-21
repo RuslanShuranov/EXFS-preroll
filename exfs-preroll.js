@@ -103,9 +103,6 @@ function playAds() {
         // Call play to start showing the ad. Single video and overlay ads will
         // start at this time; the call will be ignored for ad rules.
         adsManager.start();
-        const videoAdUi = document.querySelector('.videoAdUi');
-        videoAdUi.style.pointerEvents = 'auto';
-        videoAdUi.style.cursor = 'pointer';
     } catch (adError) {
         // An error may be thrown if there was a problem with the VAST response.
         videoContent.play();
@@ -166,6 +163,9 @@ function onAdEvent(adEvent) {
             // This event indicates the ad has started - the video player
             // can adjust the UI, for example display a pause button and
             // remaining time.
+            const videoAdUi = document.querySelector('.videoAdUi');
+            videoAdUi.style.pointerEvents = 'auto';
+            videoAdUi.style.cursor = 'pointer';
             if (ad.isLinear()) {
                 // For a linear ad, a timer can be started to poll for
                 // the remaining time.
