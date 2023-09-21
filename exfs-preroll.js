@@ -36,12 +36,12 @@ function init() {
  * Sets up IMA ad display container, ads loader, and makes an ad request.
  */
 function setUpIMA() {
-    if (!google || !google.ima) {
+    try {
+        google.ima.settings.setLocale('ru');
+    } catch (e) {
+        console.log(e);
         removePlayer();
-        return;
     }
-
-    google.ima.settings.setLocale('ru');
 
     // Create the ad display container.
     createAdDisplayContainer();
