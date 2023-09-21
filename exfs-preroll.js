@@ -213,6 +213,7 @@ function removePlayer() {
  * @param {!google.ima.AdErrorEvent} adErrorEvent
  */
 function onAdError(adErrorEvent) {
+    console.log('onAdError')
     removePlayer();
     if (adsManager) {
         adsManager.destroy();
