@@ -15,7 +15,7 @@ let adPlayer;
 let adContainer;
 
 /**
- * Initializes IMA setup.
+ * Initializes IMA setup 2.0.
  */
 function init() {
     videoContent = document.querySelector('#adPlayer video');
