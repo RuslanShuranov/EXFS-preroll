@@ -188,7 +188,7 @@ function onAdEvent(adEvent) {
             removePlayer();
             break;
         case google.ima.AdEvent.Type.CLICK:
-            console.log('click');
+            removePlayer();
             break;
     }
 }
