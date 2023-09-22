@@ -19,13 +19,11 @@ function init() {
     videoContent = document.querySelector('#adPlayer video');
     playButton = document.querySelector('#adPlayButton');
     adPlayer = document.querySelector('#adPlayer');
-    // adContainer = document.querySelector('#adContainer');
 
 
     videoContent.addEventListener('click', playAds);
     playButton.addEventListener('click', playAds);
     adPlayer.addEventListener('click', playAds);
-    // adContainer.addEventListener('click', playAds);
 
     player = document.querySelector('#adPlayer');
 
@@ -95,6 +93,19 @@ function playAds() {
 
     document.querySelector('#adContainer .mejs-mediaelement video').style.display = 'block';
     playButton.style.display = 'none';
+    adContainer.appendChild(<div className={'prevent-click'} style={{
+        position: 'absolute',
+        top: 0,
+        left: 0,
+        width: '100%',
+        height: '100%',
+        zIndex: 9999,
+        pointerEvents: 'none'
+    }}></div>);
+
+    window.setTimeout(() => {
+        document.querySelector('.prevent-click').remove();
+    }, 1000);
 
     try {
         // Initialize the ads manager. Ad rules playlist will start at this time.
@@ -163,9 +174,6 @@ function onAdEvent(adEvent) {
             // This event indicates the ad has started - the video player
             // can adjust the UI, for example display a pause button and
             // remaining time.
-            const videoAdUi = document.querySelector('.videoAdUi');
-            videoAdUi.style.pointerEvents = 'auto';
-            videoAdUi.style.cursor = 'pointer';
             if (ad.isLinear()) {
                 // For a linear ad, a timer can be started to poll for
                 // the remaining time.
