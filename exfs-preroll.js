@@ -27,6 +27,17 @@ function init() {
 
     player = document.querySelector('#adPlayer');
 
+    const preventClickElement = document.createElement('div');
+    preventClickElement.className = 'prevent-click';
+    preventClickElement.style.position = 'absolute';
+    preventClickElement.style.top = 0;
+    preventClickElement.style.left = 0;
+    preventClickElement.style.width = '100%';
+    preventClickElement.style.height = '100%';
+    preventClickElement.style.zIndex = '9999';
+    preventClickElement.style.pointerEvents = 'none';
+    document.querySelector('#adContainer').appendChild(preventClickElement);
+
     setUpIMA();
 }
 
@@ -93,16 +104,6 @@ function playAds() {
 
     document.querySelector('#adContainer .mejs-mediaelement video').style.display = 'block';
     playButton.style.display = 'none';
-    const preventClickElement = document.createElement('div');
-    preventClickElement.className = 'prevent-click';
-    preventClickElement.style.position = 'absolute';
-    preventClickElement.style.top = 0;
-    preventClickElement.style.left = 0;
-    preventClickElement.style.width = '100%';
-    preventClickElement.style.height = '100%';
-    preventClickElement.style.zIndex = '9999';
-    preventClickElement.style.pointerEvents = 'none';
-    document.querySelector('#adContainer').appendChild(preventClickElement);
 
     window.setTimeout(() => {
         document.querySelector('.prevent-click').remove();
