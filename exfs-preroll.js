@@ -93,15 +93,16 @@ function playAds() {
 
     document.querySelector('#adContainer .mejs-mediaelement video').style.display = 'block';
     playButton.style.display = 'none';
-    adContainer.appendChild(<div className={'prevent-click'} style={{
-        position: 'absolute',
-        top: 0,
-        left: 0,
-        width: '100%',
-        height: '100%',
-        zIndex: 9999,
-        pointerEvents: 'none'
-    }}></div>);
+    const preventClickElement = document.createElement('div');
+    preventClickElement.className = 'prevent-click';
+    preventClickElement.style.position = 'absolute';
+    preventClickElement.style.top = 0;
+    preventClickElement.style.left = 0;
+    preventClickElement.style.width = '100%';
+    preventClickElement.style.height = '100%';
+    preventClickElement.style.zIndex = '9999';
+    preventClickElement.style.pointerEvents = 'none';
+    document.querySelector('#adContainer').appendChild(preventClickElement);
 
     window.setTimeout(() => {
         document.querySelector('.prevent-click').remove();
