@@ -171,7 +171,6 @@ function onAdEvent(adEvent) {
                 // Position AdDisplayContainer correctly for overlay.
                 // Use ad.width and ad.height.
                 videoContent.play();
-                adContainer.addEventListener('click', removePlayer);
             }
             break;
         case google.ima.AdEvent.Type.STARTED:
