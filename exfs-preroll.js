@@ -21,14 +21,6 @@ function init() {
     videoContent.addEventListener('click', onPlayTrigger);
     playButton.addEventListener('click', onPlayTrigger);
 
-    const preventClickElement = document.createElement('div');
-    preventClickElement.className = 'prevent-click';
-    preventClickElement.onclick = function (event) {
-        console.log('prevent click')
-        event.stopPropagation();
-    }
-    adPlayer.appendChild(preventClickElement);
-
     setUpIMA();
 }
 
