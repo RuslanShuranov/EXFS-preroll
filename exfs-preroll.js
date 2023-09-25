@@ -21,9 +21,9 @@ function init() {
     adPlayer = document.querySelector('#adPlayer');
 
 
-    videoContent.addEventListener('click', playAds);
-    playButton.addEventListener('click', playAds);
-    adPlayer.addEventListener('click', playAds);
+    videoContent.addEventListener('click', onPlayTrigger);
+    playButton.addEventListener('click', onPlayTrigger);
+    adPlayer.addEventListener('click', onPlayTrigger);
 
     player = document.querySelector('#adPlayer');
 
@@ -39,6 +39,11 @@ function init() {
     document.querySelector('#adContainer').appendChild(preventClickElement);
 
     setUpIMA();
+}
+
+function onPlayTrigger(event) {
+    event.stopPropagation();
+    playAds();
 }
 
 /**
