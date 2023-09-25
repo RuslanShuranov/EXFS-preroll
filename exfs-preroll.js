@@ -30,6 +30,7 @@ function init() {
     const preventClickElement = document.createElement('div');
     preventClickElement.className = 'prevent-click';
     preventClickElement.onclick = function (event) {
+        console.log('prevent click')
         event.stopPropagation();
     }
     document.querySelector('#adContainer').appendChild(preventClickElement);
@@ -107,7 +108,6 @@ function playAds() {
     playButton.style.display = 'none';
 
     window.setTimeout(() => {
-        console.log('remove prevent click');
         document.querySelector('.prevent-click').remove();
     }, 1000);
 
@@ -213,7 +213,6 @@ function onAdEvent(adEvent) {
 }
 
 function removePlayer() {
-    console.log('removePlayer')
     player.parentNode.removeChild(player);
     if (adsManager) {
         adsManager.destroy();
@@ -225,7 +224,6 @@ function removePlayer() {
  * @param {!google.ima.AdErrorEvent} adErrorEvent
  */
 function onAdError(adErrorEvent) {
-    console.log('onAdError')
     removePlayer();
     if (adsManager) {
         adsManager.destroy();
