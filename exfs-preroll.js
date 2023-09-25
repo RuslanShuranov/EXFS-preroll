@@ -8,9 +8,7 @@ let adDisplayContainer;
 let intervalTimer;
 let videoContent;
 let playButton;
-let player;
 let adPlayer;
-let adContainer;
 
 /**
  * Initializes IMA setup 1.0.
@@ -20,12 +18,8 @@ function init() {
     playButton = document.querySelector('#adPlayButton');
     adPlayer = document.querySelector('#adPlayer');
 
-
     videoContent.addEventListener('click', onPlayTrigger);
     playButton.addEventListener('click', onPlayTrigger);
-    adPlayer.addEventListener('click', onPlayTrigger);
-
-    player = document.querySelector('#adPlayer');
 
     const preventClickElement = document.createElement('div');
     preventClickElement.className = 'prevent-click';
@@ -212,7 +206,7 @@ function onAdEvent(adEvent) {
 }
 
 function removePlayer() {
-    player.parentNode.removeChild(player);
+    adPlayer.parentNode.removeChild(adPlayer);
     if (adsManager) {
         adsManager.destroy();
     }
