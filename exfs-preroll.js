@@ -33,7 +33,7 @@ function init() {
         console.log('prevent click')
         event.stopPropagation();
     }
-    document.querySelector('#adContainer').appendChild(preventClickElement);
+    adPlayer.appendChild(preventClickElement);
 
     setUpIMA();
 }
