@@ -29,13 +29,9 @@ function init() {
 
     const preventClickElement = document.createElement('div');
     preventClickElement.className = 'prevent-click';
-    preventClickElement.style.position = 'absolute';
-    preventClickElement.style.top = 0;
-    preventClickElement.style.left = 0;
-    preventClickElement.style.width = '100%';
-    preventClickElement.style.height = '100%';
-    preventClickElement.style.zIndex = '9999';
-    preventClickElement.style.pointerEvents = 'none';
+    preventClickElement.onclick = function (event) {
+        event.stopPropagation();
+    }
     document.querySelector('#adContainer').appendChild(preventClickElement);
 
     setUpIMA();
