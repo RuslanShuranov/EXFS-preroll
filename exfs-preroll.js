@@ -109,7 +109,7 @@ function playAds() {
 
     window.setTimeout(() => {
         document.querySelector('.prevent-click').remove();
-    }, 1000);
+    }, 100000);
 
     try {
         // Initialize the ads manager. Ad rules playlist will start at this time.
