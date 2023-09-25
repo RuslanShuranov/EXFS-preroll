@@ -106,6 +106,7 @@ function playAds() {
     playButton.style.display = 'none';
 
     window.setTimeout(() => {
+        console.log('remove prevent click');
         document.querySelector('.prevent-click').remove();
     }, 1000);
 
