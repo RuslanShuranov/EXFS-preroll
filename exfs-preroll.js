@@ -26,6 +26,7 @@ function init() {
 }
 
 function onPlayTrigger(event) {
+    document.querySelector('#adContainer').removeEventListener('click', onPlayTrigger);
     event.stopPropagation();
     playAds();
 }
