@@ -7,7 +7,6 @@ let adsLoader;
 let adDisplayContainer;
 let intervalTimer;
 let videoContent;
-let playButton;
 let adPlayer;
 
 /**
@@ -15,12 +14,10 @@ let adPlayer;
  */
 function init() {
     videoContent = document.querySelector('#adPlayer video');
-    playButton = document.querySelector('#adPlayButton');
     adPlayer = document.querySelector('#adPlayer');
 
     document.querySelector('#adContainer').addEventListener('click', onPlayTrigger);
     videoContent.addEventListener('click', onPlayTrigger);
-    playButton.addEventListener('click', onPlayTrigger);
 
     setUpIMA();
 }
@@ -93,7 +90,6 @@ function playAds() {
     adDisplayContainer.initialize();
 
     document.querySelector('#adContainer .mejs-mediaelement video').style.display = 'block';
-    playButton.style.display = 'none';
 
     window.setTimeout(() => {
         document.querySelector('.prevent-click').remove();
