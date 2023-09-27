@@ -46,10 +46,10 @@ iframe[allow="autoplay;attribution-reporting"] {
     left: 0;
 }
 
-.adPlayer .mejs-inner .me-cannotplay {
+#adPlayer .mejs-inner .me-cannotplay {
     display: none;
 }
 
-.adPlayer .mejs-container {
+#adPlayer .mejs-container {
     background: transparent;
 }
