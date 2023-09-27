@@ -49,3 +49,7 @@ iframe[allow="autoplay;attribution-reporting"] {
 .adPlayer .mejs-inner .me-cannotplay {
     display: none;
 }
+
+.adPlayer .mejs-container {
+    background: transparent;
+}
