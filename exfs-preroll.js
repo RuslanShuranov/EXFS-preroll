@@ -18,6 +18,7 @@ function init() {
     playButton = document.querySelector('#adPlayButton');
     adPlayer = document.querySelector('#adPlayer');
 
+    document.querySelector('#adContainer').addEventListener('click', onPlayTrigger);
     videoContent.addEventListener('click', onPlayTrigger);
     playButton.addEventListener('click', onPlayTrigger);
 
