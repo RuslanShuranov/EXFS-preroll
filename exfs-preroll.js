@@ -13,7 +13,7 @@ let adPlayer;
  * Initializes IMA setup 1.0.
  */
 function init() {
-    videoContent = document.querySelector('#adPlayer video');
+    videoContent = document.querySelector('#adPlayer #adContentElement');
     adPlayer = document.querySelector('#adPlayer');
 
     document.querySelector('#adContainer').addEventListener('click', onPlayTrigger);
@@ -34,6 +34,7 @@ function onPlayTrigger(event) {
 function setUpIMA() {
     try {
         google.ima.settings.setLocale('ru');
+        google.ima.settings.setDisableCustomPlaybackForIOS10Plus(true);
     } catch (e) {
         console.log(e);
         removePlayer();
@@ -78,8 +79,7 @@ function setUpIMA() {
 function createAdDisplayContainer() {
     // We assume the adContainer is the DOM id of the element that will house
     // the ads.
-    google.ima.settings.setDisableCustomPlaybackForIOS10Plus(true);
-    adDisplayContainer = new google.ima.AdDisplayContainer(document.getElementById('adContainer'), document.getElementById('adContentElement'));
+    adDisplayContainer = new google.ima.AdDisplayContainer(document.getElementById('adContainer'), videoContent);
 }
 
 /**
