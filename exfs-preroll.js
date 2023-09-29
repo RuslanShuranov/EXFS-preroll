@@ -78,6 +78,7 @@ function setUpIMA() {
 function createAdDisplayContainer() {
     // We assume the adContainer is the DOM id of the element that will house
     // the ads.
+    google.ima.settings.setDisableCustomPlaybackForIOS10Plus(true);
     adDisplayContainer = new google.ima.AdDisplayContainer(document.getElementById('adContainer'));
 }
 
@@ -90,10 +91,6 @@ function playAds() {
     adDisplayContainer.initialize();
 
     document.querySelector('#adContainer .mejs-mediaelement video').style.display = 'block';
-
-    window.setTimeout(() => {
-        document.querySelector('.prevent-click').remove();
-    }, 100000);
 
     try {
         // Initialize the ads manager. Ad rules playlist will start at this time.
