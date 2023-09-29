@@ -42,8 +42,7 @@ function setUpIMA() {
         removePlayer();
     }
 
-    // Create the ad display container.
-    createAdDisplayContainer();
+    adDisplayContainer = new google.ima.AdDisplayContainer(document.getElementById('adContainer'), videoContent);
 
     // Create ads loader.
     adsLoader = new google.ima.AdsLoader(adDisplayContainer);
@@ -73,15 +72,6 @@ function setUpIMA() {
     adsRequest.nonLinearAdSlotHeight = 150;
 
     adsLoader.requestAds(adsRequest);
-}
-
-/**
- * Sets the 'adContainer' div as the IMA ad display container.
- */
-function createAdDisplayContainer() {
-    // We assume the adContainer is the DOM id of the element that will house
-    // the ads.
-    adDisplayContainer = new google.ima.AdDisplayContainer(document.getElementById('adContainer'), videoContent);
 }
 
 /**
