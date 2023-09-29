@@ -16,6 +16,7 @@ function init() {
     videoContent = document.querySelector('#adPlayer #adContentElement');
     adPlayer = document.querySelector('#adPlayer');
     videoContent.setAttribute('playsinline', 'true');
+    videoContent.setAttribute('muted', 'true');
 
     document.querySelector('#adContainer').addEventListener('click', onPlayTrigger);
     videoContent.addEventListener('click', onPlayTrigger);
