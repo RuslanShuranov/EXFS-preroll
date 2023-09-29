@@ -16,9 +16,6 @@ function init() {
     videoContent = document.querySelector('#adPlayer #adContentElement');
     adPlayer = document.querySelector('#adPlayer');
     videoContent.playsInline = true;
-    videoContent.autoplay = true;
-    videoContent.muted = true;
-    videoContent.controls = false;
 
     document.querySelector('#adContainer').addEventListener('click', onPlayTrigger);
     videoContent.addEventListener('click', onPlayTrigger);
