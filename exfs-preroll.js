@@ -19,7 +19,7 @@ function init() {
     videoContent.setAttribute('controls', 'true');
     const source = document.createElement('source');
     source.setAttribute('src', 'https://storage.googleapis.com/gvabox/media/samples/stock.mp4');
-    source.setAttribute('type', 'video/mp4');
+    source.setAttribute('type', '*');
     videoContent.appendChild(source);
 
 
