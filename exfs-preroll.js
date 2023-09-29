@@ -20,7 +20,7 @@ function init() {
     videoContent.setAttribute('autoplay', 'true');
     videoContent.setAttribute('muted', 'true');
     videoContent.setAttribute('type', 'video/mp4');
-    videoContent.setAttribute('src', 'https://storage.googleapis.com/gvabox/media/samples/stock.mp4')
+    videoContent.setAttribute('src', 'https://srv224.com/zqglLIQRrbs0CBLPCttQ444RJqwH1Qps37TQhsd1SYs-39gLD6yYRoN91X7NladDIUAPt2TZARVCJMTlPIJ_e2iV0bQeMfoI')
 
 
 
