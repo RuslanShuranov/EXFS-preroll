@@ -17,7 +17,7 @@ function init() {
     adPlayer = document.querySelector('#adPlayer');
     videoContent.setAttribute('playsinline', 'true');
     videoContent.setAttribute('controls', 'true');
-    videoContent.setAttribute('src', 'https://storage.googleapis.com/gvabox/media/samples/stock.mp4');
+    videoContent.setAttribute('src', '');
 
     document.querySelector('#adContainer').addEventListener('click', onPlayTrigger);
     videoContent.addEventListener('click', onPlayTrigger);
@@ -36,8 +36,8 @@ function onPlayTrigger(event) {
  */
 function setUpIMA() {
     try {
-        google.ima.settings.setLocale('ru');
         google.ima.settings.setDisableCustomPlaybackForIOS10Plus(true);
+        google.ima.settings.setLocale('ru');
     } catch (e) {
         console.log(e);
         removePlayer();
