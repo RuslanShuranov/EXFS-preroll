@@ -16,11 +16,7 @@ function init() {
     videoContent = document.querySelector('#adPlayer #adContentElement');
     adPlayer = document.querySelector('#adPlayer');
     videoContent.setAttribute('playsinline', 'true');
-    videoContent.setAttribute('webkit-playsinline', 'true');
-    videoContent.setAttribute('autoplay', 'true');
-    videoContent.setAttribute('muted', 'true');
-    videoContent.setAttribute('type', 'video/mp4');
-    videoContent.setAttribute('src', 'https://srv224.com/zqglLIQRrbs0CBLPCttQ444RJqwH1Qps37TQhsd1SYs-39gLD6yYRoN91X7NladDIUAPt2TZARVCJMTlPIJ_e2iV0bQeMfoI')
+    videoContent.setAttribute('controls', 'true');
 
 
 
