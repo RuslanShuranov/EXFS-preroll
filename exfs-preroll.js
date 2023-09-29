@@ -15,13 +15,7 @@ let adPlayer;
 function init() {
     videoContent = document.querySelector('#adPlayer #adContentElement');
     adPlayer = document.querySelector('#adPlayer');
-    videoContent.playsinline = true;
-    videoContent.src = 'https://storage.googleapis.com/gvabox/media/samples/stock.mp4';
-    videoContent.preload = 'true';
-    videoContent.autoplay = 'true';
-    videoContent.muted = 'true';
-    videoContent.loop = 'true';
-    videoContent.type = 'video/mp4';
+    videoContent.setAttribute('playsinline', '');
 
 
 
