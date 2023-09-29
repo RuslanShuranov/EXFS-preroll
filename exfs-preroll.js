@@ -19,6 +19,7 @@ function init() {
     videoContent.setAttribute('webkit-playsinline', 'true');
     videoContent.setAttribute('autoplay', 'true');
     videoContent.setAttribute('muted', 'true');
+    videoContent.setAttribute('type', 'video/mp4');
     videoContent.setAttribute('src', 'https://storage.googleapis.com/gvabox/media/samples/stock.mp4')
 
 
