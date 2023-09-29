@@ -15,7 +15,7 @@ let adPlayer;
 function init() {
     videoContent = document.querySelector('#adPlayer #adContentElement');
     adPlayer = document.querySelector('#adPlayer');
-    videoContent.setAttribute('playsinline', '');
+    videoContent.setAttribute('playsinline', 'true');
 
 
 
