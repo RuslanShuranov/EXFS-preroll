@@ -18,7 +18,6 @@ function init() {
     videoContent.setAttribute('playsinline', 'true');
     videoContent.setAttribute('controls', 'true');
     videoContent.setAttribute('src', 'https://storage.googleapis.com/gvabox/media/samples/stock.mp4');
-    videoContent.setAttribute('controls', '');
 
     document.querySelector('#adContainer').addEventListener('click', onPlayTrigger);
     videoContent.addEventListener('click', onPlayTrigger);
