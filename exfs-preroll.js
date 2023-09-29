@@ -17,6 +17,10 @@ function init() {
     adPlayer = document.querySelector('#adPlayer');
     videoContent.setAttribute('playsinline', 'true');
     videoContent.setAttribute('controls', 'true');
+    const source = document.createElement('source');
+    source.setAttribute('src', 'https://storage.googleapis.com/gvabox/media/samples/stock.mp4');
+    source.setAttribute('type', 'video/mp4');
+    videoContent.appendChild(source);
 
 
 
