@@ -15,11 +15,10 @@ let adPlayer;
 function init() {
     videoContent = document.querySelector('#adPlayer #adContentElement');
     adPlayer = document.querySelector('#adPlayer');
-    videoContent.addParameter('playsinline', 'true');
-    videoContent.addParameter('webkit-playsinline', 'true');
-    videoContent.addParameter('autoplay', 'true');
-    videoContent.addParameter('loop', 'true');
-    videoContent.addParameter('muted', 'true');
+    videoContent.playsInline = true;
+    videoContent.autoplay = true;
+    videoContent.muted = true;
+    videoContent.controls = false;
 
     document.querySelector('#adContainer').addEventListener('click', onPlayTrigger);
     videoContent.addEventListener('click', onPlayTrigger);
