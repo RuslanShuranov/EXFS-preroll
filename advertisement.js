@@ -25,7 +25,10 @@ function init() {
 
         setUpIMA();
     } catch (e) {
-        if (counter > 10) return;
+        if (counter > 10) {
+            removePlayer();
+            return;
+        };
 
         setTimeout(() => {
             init();
