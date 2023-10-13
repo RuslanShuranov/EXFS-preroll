@@ -8,20 +8,29 @@ let adDisplayContainer;
 let intervalTimer;
 let videoContent;
 let adPlayer;
-
+let counter = 0;
 /**
  * Initializes IMA setup 1.0.
  */
 function init() {
-    videoContent = document.querySelector('#adPlayer #adContentElement');
-    adPlayer = document.querySelector('#adPlayer');
-    videoContent.setAttribute('playsinline', 'true');
-    videoContent.setAttribute('muted', 'true');
+    try {
+        counter++;
+        videoContent = document.querySelector('#adPlayer #adContentElement');
+        adPlayer = document.querySelector('#adPlayer');
+        videoContent.setAttribute('playsinline', 'true');
+        videoContent.setAttribute('muted', 'true');
 
-    document.querySelector('#adContainer').addEventListener('click', onPlayTrigger);
-    videoContent.addEventListener('click', onPlayTrigger);
+        document.querySelector('#adContainer').addEventListener('click', onPlayTrigger);
+        videoContent.addEventListener('click', onPlayTrigger);
 
-    setUpIMA();
+        setUpIMA();
+    } catch (e) {
+        if (counter > 10) return;
+
+        setTimeout(() => {
+            init();
+        }, 200);
+    }
 }
 
 function onPlayTrigger(event) {
